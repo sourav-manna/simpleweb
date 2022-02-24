@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access</title>
+</head>
+<body>
+    <a id="refer" href="vxzone.html"></a>  
+    <form action="PayslipServlet" method="get">
+        Enter passcode:  <input id=passcode type="password">
+        <input type="button" value="Submit" onClick="pr()">
+    </form>
+
+      <script>
+        function pr() {
+            if(document.getElementById('passcode').value == "123321"){
+                window.location.href = "vxzone.html"; 
+            }else{
+                document.getElementById('passcode').innerText = "";
+                alert("wrong password!");
+            }
+        }
+      </script>
+</body>
+</html>
