@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FUN.com</title>
+</head>
+<body  style="background-color: black;">
+    <script>
+        var idx = "22";
+        var name = "next play mode 110023";
+        var mode = '0'
+
+        function myfun1(idn, name){
+            document.getElementById("vid");
+            let txt = "v (" + idn + ").mp4";
+            idx = eval(idn + "+ 1");
+            vid.src = txt;
+            mode = '0'
+            document.getElementById("prt").innerHTML = name;
+        }
+
+        function myfun2(idn, name){
+            document.getElementById("vid");
+            let txt = "x (" + idn + ").mp4";
+            idx = eval(idn + "+ 1");
+            vid.src = txt;
+            mode = '1'
+            document.getElementById("prt").innerHTML = name;
+        }
+        function funexit(){
+            window.location.href = "temp.html"; 
+        }
+        function next(){
+            if(mode == '0'){
+                if(idx == '2'){
+                    idx = '1'
+                }
+                myfun1(idx, name);
+            }else{
+                if(idx == '31'){
+                    idx = '1'
+                }
+                myfun2(idx, name);
+            }
+        }
+
+    </script>
+    <style>
+        p{
+            font-family: sans-serif;
+            padding-left: 10%;
+            color:azure;
+        }
+        h1{
+            font-family: sans-serif;
+            color:azure;
+            text-align:start;
+        }
+        div.ex1 {
+            float: left;
+            height: 600px;
+            width: 30%;
+            overflow-y: scroll;
+            margin-top: 6%;
+        }
+        h4{
+            font-family: sans-serif;
+            color:azure;
+            text-align:start;
+        }
+        button{
+				color:aliceblue;
+				background-color:rgb(65, 134, 167);
+				border-radius: 25px;
+				text-align: center;
+ 				text-decoration: none;
+  				display: inline-block;
+  				font-size: 25px;
+				font-family:sans-serif;
+                border: none;
+			}
+    </style>
+    <div style="float: left; width: 63%; padding-left: 7%;">
+        <div style="height: 70%;">
+            <h1 id="exit" onclick="funexit()" style="display: inline;">Vxzone </h1>  <button id="b1" onclick="next()">></button>
+            <h4 id="prt">Laja</h4>
+            <video id="vid" width="90%" controls autoplay>
+                <source src="v (19).mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    
+    <div class="ex1">
+        <p id="v1" onclick="myfun1('1','video_1')">video_1</p>
+        <p id="v2" onclick="myfun1('2','video_2')">video_2</p>
+        <p id="v3" onclick="myfun1('3','video_3')">video_3</p>
+        <p id="v4" onclick="myfun1('4','video_4')">video_4</p>
+       
+        
+    </div>
+</body>
+</html>
